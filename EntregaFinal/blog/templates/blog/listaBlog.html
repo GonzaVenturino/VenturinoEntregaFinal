@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Blogs</title>
+</head>
+<body>
+    <h1>Lista de Blogs</h1>
+    <a href="{% url 'blog_create' %}">Crear nuevo blog</a>
+    {% if blogs %}
+        <ul>
+            {% for blog in blogs %}
+                <li>
+                    <h2>{{ blog.titulo }}</h2>
+                    <p>{{ blog.subtitulo }}</p>
+                    <a href="{% url 'blog_detail' blog.id %}">Leer más</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay blogs aún.</p>
+    {% endif %}
+</body>
+</html>

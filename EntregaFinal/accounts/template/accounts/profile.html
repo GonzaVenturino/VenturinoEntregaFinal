@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil de Usuario</title>
+</head>
+
+<body>
+  <h1>Perfil de Usuario</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Actualizar Perfil</button>
+  </form>
+  <a href="{% url 'blog_list' %}">Volver al inicio</a>
+</body>
+
+</html>
